@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Relaunch</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+<body>
+  <div class="container">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-12 col-md-6">
+        <h2>Task <strong>{{ task_name }}</strong> has already run</h2>
+
+        <p class="mt-4">Do you really want to launch it again, or just see the results?</p>
+
+        <form class="mt-4" action="/run" method="post">
+          <div class="form-group">
+            <input name="task_name" value="{{ task_name }}" class="form-control" type="hidden">
+            <input name="relaunch" value="no" class="form-control" type="hidden">
+          </div>
+          <button type="submit" class="btn btn-success float-right ml-2">See results</button>
+        </form>
+
+        <form class="mt-4" action="/run" method="post">
+          <div class="form-group">
+            <input name="task_name" value="{{ task_name }}" class="form-control" type="hidden">
+            <input name="relaunch" value="yes" class="form-control" type="hidden">
+          </div>
+          <button type="submit" class="btn btn-primary float-right">Relaunch</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

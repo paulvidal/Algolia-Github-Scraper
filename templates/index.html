@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home of task runner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row mt-3 justify-content-center">
+        <div class="col-12 col-md-6">
+          <h2>Github organisation statistics</h2>
+          <p class="mt-4">Give the name of an organisation and the application will return the number of new monthly contributor for each repository of this organisation</p>
+
+          <form class="mt-4" action="/run" method="post">
+            <div class="form-group">
+              <label for="orgname">Organisation name</label>
+              <input name="task_name" value="algolia" id="orgname" class="form-control" type="text" placeholder="name">
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

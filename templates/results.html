@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.0.0/themes/algolia-min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/main.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row mt-3 justify-content-center">
+        <div class="col-12 col-md-6">
+          <h2 class="mb-3 text-center"><strong>{{ organisation }}</strong> - Repository stats</h2>
+        </div>
+      </div>
+
+      <div class="row mt-3 justify-content-center">
+        <div class="col-12">
+          <div id="app"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var data = {{ data|safe }};
+    var organisation = "{{ organisation|safe }}";
+    var algoliaAppId = "{{ algolia_app_id|safe }}";
+    var algoliaSearchKey ="{{ algolia_search_key|safe }}";
+  </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="/static/main.js"></script>
+</html>
